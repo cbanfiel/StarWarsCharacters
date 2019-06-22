@@ -3,22 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const characters = require('./characters/starwars.json');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Star Wars characters</h1>
+
+      {
+        characters.map((character, index) => {
+          return (
+              <p>
+                {character.name + " is a " + character.type}
+              </p>
+          )
+        })
+      }
+
+
+
+
     </div>
   );
 }
